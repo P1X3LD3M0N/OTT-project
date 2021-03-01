@@ -146,13 +146,29 @@ public:
         cin >> choice;
         if (choice == 1)
         {
+            string ch;
             show::show_genre();
             show::show_list();
+            cout << "\n\n";
+            cout << "What will you watch (press -1 to exit):\n";
+            cin >> ch;
+            if (ch != "-1")
+            {
+                watchS();
+            }
         }
         else
         {
+            string ch;
             movie::movie_genre();
             movie::movie_list();
+            cout << "\n\n";
+            cout << "What will you watch (press -1 to exit):\n";
+            cin >> ch;
+            if (ch != "-1")
+            {
+                watchM();
+            }
         }
     }
 };
@@ -214,10 +230,12 @@ int main()
         switch (choice)
         {
         case 1:
-            user obj;
-            obj.display();
+            user u;
+            u.display();
             break;
         case 2:
+            company c;
+            c.display();
             break;
         case 3:
             exit(0);
